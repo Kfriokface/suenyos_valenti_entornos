@@ -1,0 +1,70 @@
+<div class="form-container">
+
+  <h2 class="mb-4 text-center">Registro</h2>
+
+  <% if (errores.length > 0) { %>
+    <div class="alert alert-danger">
+      <ul class="mb-0">
+        <% errores.forEach(e => { %>
+          <li><%= e %></li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+
+  <form method="POST" action="/registro" autocomplete="off">
+
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" name="nombre" class="form-control" value="<%= datos.nombre || '' %>" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" value="<%= datos.email || '' %>" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Edad</label>
+      <input type="number" name="edad" class="form-control" value="<%= datos.edad || '' %>" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Ciudad</label>
+      <input type="text" name="ciudad" class="form-control" value="<%= datos.ciudad || '' %>">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Intereses</label>
+
+      <%
+        const interesesSeleccionados = Array.isArray(datos.intereses)
+          ? datos.intereses
+          : datos.intereses
+            ? [datos.intereses]
+            : [];
+      %>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="intereses" value="Meditación" <%= interesesSeleccionados.includes('Meditación') ? 'checked' : '' %>>
+        <label class="form-check-label">Meditación</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="intereses" value="Energía" <%= interesesSeleccionados.includes('Energía') ? 'checked' : '' %>>
+        <label class="form-check-label">Energía</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="intereses" value="Conciencia" <%= interesesSeleccionados.includes('Conciencia') ? 'checked' : '' %>>
+        <label class="form-check-label">Conciencia</label>
+      </div>
+    </div>
+
+    <button class="btn btn-primary w-100">
+      Registrarse
+    </button>
+
+  </form>
+
+</div>

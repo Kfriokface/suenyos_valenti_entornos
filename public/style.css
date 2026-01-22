@@ -1,0 +1,191 @@
+:root {
+  --color-texto-claro: #212529;
+  --color-link-claro: #0d6efd;
+  --color-link-hover-claro: #0a58ca;
+
+  --bg-main-claro: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+
+  --nav-bg-claro: #ffffff;
+  --nav-border-claro: #dddddd;
+  --nav-brand-hover-claro: #0d6efd;
+
+  --color-texto-oscuro: #f1f1f1;
+  --color-link-oscuro: #9ecbff;
+  --color-link-hover-oscuro: #c3ddff;
+
+  --bg-main-oscuro: linear-gradient(135deg, #121212, #2c2c54);
+
+  --nav-bg-oscuro: #ffffff;
+  --nav-border-oscuro: #dddddd;
+  --nav-brand-hover-oscuro: #9ecbff;
+
+  --color-texto: var(--color-texto-claro);
+  --color-link: var(--color-link-claro);
+  --color-link-hover: var(--color-link-hover-claro);
+
+  --bg-main: var(--bg-main-claro);
+
+  --bs-border-color: cornflowerblue;
+
+  --nav-bg: var(--nav-bg-claro);
+  --nav-border: var(--nav-border-claro);
+  --nav-brand-hover: var(--nav-brand-hover-claro);
+
+   /* Panels */
+  --panel-bg-claro: rgba(255, 255, 255, 0.75);
+  --panel-bg-oscuro: rgba(30, 30, 30, 0.75);
+
+  --panel-text-claro: #212529;
+  --panel-text-oscuro: #f1f1f1;
+
+  --panel-shadow-claro: 0 0 20px rgba(0, 0, 0, 0.1);
+  --panel-shadow-oscuro: 0 0 20px rgba(0, 0, 0, 0.6);
+
+  --panel-bg: var(--panel-bg-claro);
+  --panel-text: var(--panel-text-claro);
+  --panel-shadow: var(--panel-shadow-claro);
+
+    /* Nubes */
+  --clouds-image-claro: url("/images/clouds-light.png");
+  --clouds-image-oscuro: url("/images/clouds-dark.png");
+  --clouds-image: var(--clouds-image-claro);
+
+  --clouds-speed: 120s;
+  --clouds-opacity: 0.25;
+}
+
+body {
+  color: var(--color-texto);
+  background: var(--bg-main);
+  position: relative;
+  transition: background 0.6s ease, color 0.3s ease;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -40px;
+  inset: 0;
+  background-image: var(--clouds-image);
+  background-repeat: repeat-x;
+  background-size: 800px 300px;
+  background-position: 0 20%;
+  opacity: var(--clouds-opacity);
+  animation: clouds-move var(--clouds-speed) linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* theming */
+body.claro {
+  --color-texto: var(--color-texto-claro);
+  --color-link: var(--color-link-claro);
+  --color-link-hover: var(--color-link-hover-claro);
+
+  --bg-main: var(--bg-main-claro);
+
+  --nav-bg: var(--nav-bg-claro);
+  --nav-border: var(--nav-border-claro);
+  --nav-brand-hover: var(--nav-brand-hover-claro);
+
+  --panel-bg: var(--panel-bg-claro);
+  --panel-text: var(--panel-text-claro);
+  --panel-shadow: var(--panel-shadow-claro);
+
+  --clouds-image: var(--clouds-image-claro);
+}
+
+body.oscuro {
+  --color-texto: var(--color-texto-oscuro);
+  --color-link: var(--color-link-oscuro);
+  --color-link-hover: var(--color-link-hover-oscuro);
+
+  --bg-main: var(--bg-main-oscuro);
+
+  --nav-bg: var(--nav-bg-oscuro);
+  --nav-border: var(--nav-border-oscuro);
+  --nav-brand-hover: var(--nav-brand-hover-oscuro);
+
+  --panel-bg: var(--panel-bg-oscuro);
+  --panel-text: var(--panel-text-oscuro);
+  --panel-shadow: var(--panel-shadow-oscuro);
+
+  --clouds-image: var(--clouds-image-oscuro);
+}
+
+/* CSS generales */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* navbar */
+.app-navbar {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  width: 100%;
+  z-index: 1030;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand:hover {
+  color: var(--nav-brand-hover);
+}
+
+/* forms */ 
+.form-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  background-color: var(--panel-bg);
+  color: var(--panel-text);
+  border-radius: 8px;
+  box-shadow: var(--panel-shadow);
+}
+
+.form-control {
+  background-color: transparent;
+  color: inherit;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* home */
+.home-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1.25 rem;
+  font-weight: 300;
+}
+
+/* Animaciones */ 
+@keyframes clouds-move {
+  from {
+    background-position: 0 20%;
+  }
+  to {
+    background-position: -2000px 20%;
+  }
+}

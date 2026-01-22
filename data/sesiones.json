@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Meditación lunar",
+    "descripcion": "Sesión guiada para conectar con la energía de la luna y calmar la mente."
+  },
+  {
+    "id": 2,
+    "nombre": "Viaje astral guiado",
+    "descripcion": "Explora planos de conciencia superiores a través de una visualización profunda."
+  },
+  {
+    "id": 3,
+    "nombre": "Sanación energética",
+    "descripcion": "Armoniza tu campo energético y libera bloqueos emocionales."
+  },
+  {
+    "id": 4,
+    "nombre": "Hay un gallego en la Luna... luna",
+    "descripcion": "Y el raposo es de Ferrol, manda carallo"
+  },
+  {
+    "id": 5,
+    "nombre": "Caramba carambita carambiruri",
+    "descripcion": "Tus ojos son dos luceros, tu boca un melocotón, de junco es tu cinturita, de piedra tu corazón."
+  },
+  {
+    "id": 6,
+    "nombre": "Iker Jiménez lo sabe",
+    "descripcion": "Que nadie se ría de quien tenga una experiencia paranormal; esa risa sólo la tienen los ignorantes."
+  }
+]

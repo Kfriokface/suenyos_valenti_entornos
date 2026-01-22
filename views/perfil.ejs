@@ -1,0 +1,26 @@
+<div class="form-container">
+  <h2 class="mb-4">Perfil de usuario</h2>
+
+  <p><strong>Nombre:</strong> <%= usuario.nombre %></p>
+  <p><strong>Email:</strong> <%= usuario.email %></p>
+  <p><strong>Edad:</strong> <%= usuario.edad %></p>
+  <p><strong>Ciudad:</strong> <%= usuario.ciudad %></p>
+
+  <p><strong>Intereses:</strong></p>
+  <% if (usuario.intereses && usuario.intereses.length > 0) { %>
+    <ul class="list-group mb-3">
+      <% usuario.intereses.forEach(i => { %>
+        <li class="list-group-item"><%= i %></li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No se han indicado intereses.</p>
+  <% } %>
+
+  <form method="POST" action="/logout">
+    <button class="btn btn-danger">
+      Cerrar sesión
+    </button>
+  </form>
+
+</div>
