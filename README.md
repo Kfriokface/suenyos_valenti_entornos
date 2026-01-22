@@ -59,7 +59,7 @@ npm run dev
 3. Ejecutar en modo producción:
 
 ```bash
-node app.js
+npm run start
 ```
 
 4. Abrir en el navegador:
