@@ -1,4 +1,4 @@
-# Sistema de Registro y Login con Sesiones
+# Sueños Valenti
 
 Aplicación web desarrollada con **Node.js y Express** que implementa un sistema completo de registro, autenticación y gestión de sesiones de usuario.
 

@@ -105,7 +105,7 @@ app.post('/registro', (req, res) => {
     });
   }
 
-  // Normalizamos intereses a array
+  // se normaliza 'intereses' a array
   let interesesNormalizados = [];
   if (intereses) {
     interesesNormalizados = Array.isArray(intereses)
