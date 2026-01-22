@@ -81,5 +81,6 @@ http://localhost:3000
 ## Autor
 
 **Alberto Sancho**  
-Asignatura: Despliegue de Aplicaciones Web  
+Asignatura: Desarrollo web entorno servidor  
 Fecha: Enero 2026
+
